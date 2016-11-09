@@ -178,6 +178,17 @@ LOCAL_SRC_FILES     := priv-app/com.qualcomm.location/com.qualcomm.location.apk
 LOCAL_MODULE_PATH   := $(PRODUCT_OUT)/system/priv-app
 include $(BUILD_PREBUILT)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE        := TimeService
+LOCAL_MODULE_OWNER  := oneplus
+LOCAL_MODULE_TAGS   := optional
+LOCAL_MODULE_CLASS  := APPS
+LOCAL_CERTIFICATE   := platform
+LOCAL_MODULE_SUFFIX := .apk
+LOCAL_SRC_FILES     := app/TimeService/TimeService.apk
+LOCAL_MODULE_PATH   := $(PRODUCT_OUT)/system/app
+include $(BUILD_PREBUILT)
+
 $(shell mkdir -p $(TARGET_OUT)/etc/firmware/wcd9320; \
         ln -sf /data/misc/audio/wcd9320_anc.bin \
                 $(TARGET_OUT)/etc/firmware/wcd9320/wcd9320_anc.bin;\
